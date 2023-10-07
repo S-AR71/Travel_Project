@@ -4,20 +4,31 @@ body {
 }
 
 .container {
-  max-width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 64px;
 }
 
+.img-responsive {
+  max-width: 100%;
+}
+
+.grid-2-colums {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3-columns-with-first-narrow {
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
 section {
-  width: 100%;
+  width: 1200px;
   margin: 0 auto;
+  padding: 100px 0;
 }
 
 header {
@@ -27,13 +38,11 @@ header {
   background-size: cover;
   color: white;
   text-align: center;
-  padding: 275px 0;
-  font-style: normal;
-  margin-top: 32px;
+  padding: 200px 0;
 }
 
 header h1 {
-  font-size: 90px;
+  font-size: 96px;
   font-weight: 700;
   line-height: 1;
   margin: 30px 0;
@@ -60,7 +69,7 @@ header a {
   line-height: 1.5;
   letter-spacing: 3px;
   text-align: center;
-  color: #272044;
+  color: #59544b;
   padding: 16px 32px;
   margin-top: 32px;
   display: inline-block;
@@ -68,6 +77,39 @@ header a {
   text-transform: uppercase;
   background: white;
 }
+
+main {
+  background-color: white;
+}
+
+main h2 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 5px;
+  color: #59544b;
+  opacity: 0.3;
+  text-transform: uppercase;
+}
+
+main h3 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #59544b;
+  margin: 0;
+}
+
+main p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #59544b;
+  opacity: 0.7;
+}
+
 footer {
   color: white;
   background-image: linear-gradient(
@@ -79,7 +121,6 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
 }
 
 footer h3 {
@@ -92,7 +133,7 @@ footer p {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 footer ul {
@@ -114,7 +155,7 @@ footer a:visited {
   color: white;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 960px) {
   header {
     padding: 60px 60px;
   }
@@ -126,5 +167,13 @@ footer a:visited {
   }
   header h3 {
     font-size: 12px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+  }
+
+  section {
+    padding: 30px;
   }
 }
