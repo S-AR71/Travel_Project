@@ -12,10 +12,6 @@ body {
   text-align: center;
 }
 
-.grid {
-  display: grid;
-  grid-gap: 64px;
-}
 .img-responsive-1 {
   max-width: 100%;
   display: block;
@@ -26,6 +22,10 @@ body {
   aspect-ratio: 1 /1;
 }
 
+.grid {
+  display: grid;
+  grid-gap: 64px;
+}
 .grid-2-colums {
   grid-template-columns: 1fr 1fr;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 .embed {
-  width: 100%;
+  max-width: 100%;
   aspect-ratio: 1 /1;
 }
 
@@ -67,7 +67,7 @@ body {
   display: block;
   color: white;
   font-weight: 700;
-  font-size: 14px;
+  font-size: clamp() 14px;
   line-height: 21px;
   text-align: center;
   letter-spacing: 3px;
@@ -78,7 +78,7 @@ body {
 }
 
 section {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 100px 0;
 }
@@ -91,6 +91,7 @@ header {
   color: white;
   text-align: center;
   padding: 200px 0;
+  min-height: 300px;
 }
 
 header h1 {
@@ -232,31 +233,68 @@ footer a:visited {
   color: white;
 }
 
-@media (max-width: 960px) {
-  header {
-    padding: 60px 0;
+@media (max-width: 40rem) {
+  header,
+  main,
+  section,
+  footer {
+    padding: 2rem 0;
+    margin: 0 auto;
   }
+
   header h1 {
     font-size: 48px;
   }
+
   header h2 {
     font-size: 20px;
   }
+
   header h3 {
     font-size: 12px;
   }
+
+  main h3 {
+    font-size: 20px;
+  }
+
+  section {
+    text-align: center;
+  }
+
   .grid {
+    display: block;
     grid-template-columns: 1fr;
     grid-gap: 32px;
   }
 
-  section {
-    padding: 30px;
+  .card {
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
   }
+
   .card-header img {
     display: none;
   }
+
+  .img-responsive {
+    display: none;
+  }
+
+  .img-responsive-1 {
+    grid-template-columns: 1fr;
+    width: 75%;
+    padding: 25px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
   .embed {
-    aspect-ratio: 16 /9;
+    width: 75%;
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
   }
 }
